@@ -75,6 +75,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Match V4";
             this.tabPage1.UseVisualStyleBackColor = true;
+           // this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label4
             // 
@@ -118,6 +119,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Request";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 

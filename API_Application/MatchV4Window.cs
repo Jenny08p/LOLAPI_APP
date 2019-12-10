@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace API_Application
 {
-    public partial class Form1 : Form
+    public partial class MatchV4Window : Form
     {
-        public Form1()
+        public MatchV4Window()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            MatchV4Window v4 = new MatchV4Window();
-            v4.ShowDialog();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }
