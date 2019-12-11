@@ -13,7 +13,7 @@ namespace API_Project
         public event PropertyChangedEventHandler PropertyChanged;
         public BindingList<Summoner> summoner { get; set; }
 
-        // public static readonly string ApiKey = "RGAPI-1b668a58-5d25-41cf-a9d6-a57cbf78d310";
+        public static readonly string ApiKey = "RGAPI-1b668a58-5d25-41cf-a9d6-a57cbf78d310";
         public static readonly Uri ApiBaseAddress = new Uri("https://na1.api.riotgames.com/lol/summoner/v4/summoners");
         public HttpClient Client { get; set; }
 

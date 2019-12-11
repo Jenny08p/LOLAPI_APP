@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.matchesControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,9 +44,11 @@
             this.Website = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.apiBox = new System.Windows.Forms.TextBox();
+            this.viewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matchesControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // matchesControl
@@ -75,7 +78,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Match V4";
             this.tabPage1.UseVisualStyleBackColor = true;
-           // this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label4
             // 
@@ -123,6 +125,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.viewModelBindingSource, "playerName", true));
             this.textBox2.Location = new System.Drawing.Point(122, 36);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(398, 22);
@@ -165,8 +168,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Enter";
+            this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Website
             // 
@@ -194,6 +198,11 @@
             this.apiBox.Name = "apiBox";
             this.apiBox.Size = new System.Drawing.Size(446, 22);
             this.apiBox.TabIndex = 0;
+            this.apiBox.TextChanged += new System.EventHandler(this.apiBox_TextChanged);
+            // 
+            // viewModelBindingSource
+            // 
+            this.viewModelBindingSource.DataSource = typeof(API_Application.ViewModel);
             // 
             // Form1
             // 
@@ -208,6 +217,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +239,7 @@
         private System.Windows.Forms.LinkLabel Website;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox apiBox;
+        private System.Windows.Forms.BindingSource viewModelBindingSource;
     }
 }
 

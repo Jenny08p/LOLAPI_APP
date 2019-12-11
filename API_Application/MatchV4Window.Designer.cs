@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Level = new System.Windows.Forms.Label();
@@ -45,8 +46,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.viewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.playerDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -94,6 +99,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.playerDataBindingSource, "summonerLevel", true));
             this.textBox5.Location = new System.Drawing.Point(108, 53);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
@@ -126,6 +132,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.playerDataBindingSource, "summonerName", true));
             this.textBox1.Location = new System.Drawing.Point(292, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -221,6 +228,14 @@
             this.checkedListBox1.Size = new System.Drawing.Size(138, 157);
             this.checkedListBox1.TabIndex = 7;
             // 
+            // viewModelBindingSource
+            // 
+            this.viewModelBindingSource.DataSource = typeof(API_Application.ViewModel);
+            // 
+            // playerDataBindingSource
+            // 
+            this.playerDataBindingSource.DataSource = typeof(API_Library.PlayerData);
+            // 
             // MatchV4Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,6 +247,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +272,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.BindingSource viewModelBindingSource;
+        private System.Windows.Forms.BindingSource playerDataBindingSource;
     }
 }
